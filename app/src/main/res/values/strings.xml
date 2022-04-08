@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">lms_siselo</string>
+    <string name="next">Next</string>
+    <string name="teks_back">Back</string>
+
+    <string name="siselo">Sistem Sekolah Online</string>
+    <string name="siselo_deskripsi">Sekolah jadi lebih mudah dengan berbagai fitur yang tersedia dapat memudahkan siswa bersekolah.</string>
+    <!-- TODO: Remove or change this placeholder text -->
+</resources>
