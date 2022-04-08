@@ -1,1 +1,1 @@
-Merupakan versi mobile dari website LMS SISELO.
+Merupakan versi mobile dari website LMS SISELO (http://siselo.allif.my.id/).
