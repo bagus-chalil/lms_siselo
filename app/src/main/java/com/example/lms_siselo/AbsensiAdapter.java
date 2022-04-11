@@ -18,7 +18,6 @@ public class AbsensiAdapter extends RecyclerView.Adapter<AbsensiAdapter.AbsenAda
     private Context context;
     private AbsensiAdapter.ClickedItem clickedItem;
 
-
     public AbsensiAdapter(AbsensiAdapter.ClickedItem clickedItem) {
         this.clickedItem = clickedItem;
     }
@@ -40,11 +39,22 @@ public class AbsensiAdapter extends RecyclerView.Adapter<AbsensiAdapter.AbsenAda
 
         AbsensiResponse absenResponse = absenResponseList.get(position);
 
-        String username  = absenResponse.getNama_matpel();
+        //Post Absensi Siswa
+        SiseloService serviceAPI=ApiClient.getMapelService();
+        String absen_id = absenResponse.getId_absen();
 
+        String matpel  = absenResponse.getNama_matpel();
+        String kelas  = absenResponse.getNama_kelas();
 
-            holder.nama_matpel.setText(username);
+            holder.nama_matpel.setText(matpel);
+            holder.nama_kelas.setText(kelas);
             holder.imageMore.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    clickedItem.ClickedAbsen(absenResponse);
+                }
+            });
+            holder.absen.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
                     clickedItem.ClickedAbsen(absenResponse);
@@ -64,13 +74,17 @@ public class AbsensiAdapter extends RecyclerView.Adapter<AbsensiAdapter.AbsenAda
     public class AbsenAdapterVH extends RecyclerView.ViewHolder {
 
         TextView nama_matpel;
+        TextView nama_kelas;
+        TextView absen;
         ImageView prefix;
         ImageView imageMore;
 
         public AbsenAdapterVH(@NonNull View itemView) {
             super(itemView);
             nama_matpel = itemView.findViewById(R.id.nama_matpel);
+            nama_kelas = itemView.findViewById(R.id.nama_kelas);
             prefix = itemView.findViewById(R.id.prefix);
+            absen = itemView.findViewById(R.id.selengkapnya);
             imageMore = itemView.findViewById(R.id.imageMore);
         }
     }

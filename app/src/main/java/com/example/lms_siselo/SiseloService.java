@@ -31,4 +31,9 @@ public interface SiseloService {
     @GET("C_Absensi")
     Call<List<AbsensiResponse>> link1(@Query("nisn")String nisn);
 
+    @FormUrlEncoded
+    @POST("C_Absensi")
+    Call<AbsensiResponse> postAbsensi(@Field("absen_id") String absen_id,
+                                      @Field("nisn") String nisn);
+
 }

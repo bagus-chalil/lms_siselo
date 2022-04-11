@@ -45,6 +45,10 @@ public class ApiClient {
         SiseloService absenService = getRetrofit().create(SiseloService.class);
         return absenService;
     }
+    public static SiseloService postAbsenService(){
+        SiseloService absenPostService = getRetrofit().create(SiseloService.class);
+        return absenPostService;
+    }
 
     public static synchronized ApiClient getInstance()
     {

@@ -21,6 +21,7 @@ public class AbsensiActivity extends AppCompatActivity implements AbsensiAdapter
 
     Toolbar toolbar;
     RecyclerView recyclerView1;
+    private String KEY_NISN = "NISN";
 
     AbsensiAdapter absenAdapter;
 
@@ -54,9 +55,9 @@ public class AbsensiActivity extends AppCompatActivity implements AbsensiAdapter
                 public void onResponse(Call<List<AbsensiResponse>> call, Response<List<AbsensiResponse>> response) {
                     if(response.isSuccessful()){
                         List<AbsensiResponse> absenResponses = response.body();
+
                         absenAdapter.setData(absenResponses);
                         recyclerView1.setAdapter(absenAdapter);
-
                     }
                 }
 
